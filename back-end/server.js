@@ -2,10 +2,15 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
+const { conn } = require("./configs/connectDB");
+
+
 require('dotenv').config();
 
 app.use(express.json());
 app.use(bodyParser.json());
+
+conn();
 
 const http = require('http');
 
